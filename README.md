@@ -99,3 +99,5 @@ To automatically strip out all output cell contents before committing to `git`, 
 ## Package your Kedro project
 
 [Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/deploy/package_a_project/#package-an-entire-kedro-project)
+
+Proyecto de procesamiento de imágenes utilizando Kedro y Pillow.
