@@ -1,0 +1,65 @@
+[build-system]
+requires = [
+    "setuptools",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.10"
+name = "si_image_processing_lab"
+readme = "README.md"
+dynamic = [
+    "version",
+]
+dependencies = [
+    "ipython>=8.10",
+    "jupyterlab>=3.0",
+    "notebook",
+    "kedro~=1.4.0",
+    "pillow>=10.0.0",
+    "pytest>=8.0.0"
+]
+
+[project.scripts]
+si-image-processing-lab = "si_image_processing_lab.__main__:main"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.version]
+attr = "si_image_processing_lab.__version__"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.poetry]
+name = "si-image-processing-lab"
+version = "0.1.0"
+description = "Laboratorio de procesamiento de imágenes"
+authors = ["Josep"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "^10.0.0"
+kedro = "^1.4.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+ruff = "^0.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+
+[tool.kedro]
+package_name = "si_image_processing_lab"
+project_name = "si-image-processing-lab"
+kedro_init_version = "1.4.0"
+tools = "['None']"
+example_pipeline = "False"
+source_dir = "src"
